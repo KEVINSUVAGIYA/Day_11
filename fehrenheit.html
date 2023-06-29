@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius</title>
+</head>
+<body>
+    <div>
+        <h3>Find Celsius</h3>
+        <h1 id="c"></h1>
+    </div>
+    <script>
+        function Celsius(f){
+            return (5/9)*(f-32)
+        }
+        var result = Celsius(36);
+        document.getElementById("c").innerHTML = result;
+    </script>
+</body>
+</html>

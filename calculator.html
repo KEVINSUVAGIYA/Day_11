@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-items: center;
+        }
+        .ip{
+            grid-area: ip;
+        }
+        #ip-area{
+            width: 225px;
+            height: 50px;
+            font-size: 25px;
+        }
+        .buttons{
+            width: 350px;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+            grid-template-areas: 'ip ip ip';
+        }
+        .button{
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="buttons">
+            <div class="button ip"><input id="ip-area" type="text"></div>
+            <div onclick="reset()"class="button ac">C</div>
+            <div onclick="append('1')" class="button btn1">1</div>
+            <div onclick="append('2')"class="button btn2">2</div>
+            <div onclick="append('3')"class="button btn3">3</div>
+            <div onclick="append('+')"class="button add">+</div>
+            <div onclick="append('4')"class="button btn4">4</div>
+            <div onclick="append('5')"class="button btn5">5</div>
+            <div onclick="append('6')"class="button btn6">6</div>
+            <div onclick="append('-')"class="button sub">-</div>
+            <div onclick="append('7')"class="button btn7">7</div>
+            <div onclick="append('8')"class="button btn8">8</div>
+            <div onclick="append('9')"class="button btn9">9</div>
+            <div onclick="append('*')"class="button multi">*</div>
+            <div onclick="append('0')"class="button btn0">0</div>
+            <div onclick="append('.')"class="button dot">.</div>
+            <div onclick="calculate()"class="button eq">=</div>
+            <div onclick="append('1')"class="button div">/</div>
+        </div>
+        <script>
+            var exp = ""
+            function append(a){
+                exp = exp + a;
+                document.getElementById("ip-area").value= exp;
+                // alert(exp)
+            }
+            function calculate(){
+                var result = eval(exp);
+                document.getElementById("ip-area").value= result;
+            }
+            function reset(){
+                document.location.reload();
+            }
+        </script>
+</body>
+</html>
